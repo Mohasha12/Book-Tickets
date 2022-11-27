@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTickets</title>
+    <link rel="stylesheet" href="../css/booktickets.css">
+    <link rel="shortcut icon" href="../bookticketimages/logo-no-background.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BookTickets</title>
+</head>
+<body id="book">
+    <header id="mainheader" class="header">
+        <nav id="mainnav">
+            <img src="../bookticketimages/logo-no-background.png" alt="logo">
+            <div class="input-group" id="searchdiv">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Search for Movies ,Events and Sports" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div id="selectcity">
+                <select name="Cities" id="cities">
+                    <option value="select cities">Select City</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Trichy">Trichy</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signindiv" id="signin">
+                Sign In
+            </button>
+            <div class="modal fade" id="signindiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="signinLabel">Sign In</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="emailid">ENTER EMAIL ID</label>
+                            <input type="email" id="emailid"><br><br>
+                            <label for="password">ENTER PASSWORD</label>
+                            <input type="password" id="password"><br><br>
+                            
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#registerdiv" id="register">
+                Register
+            </button>
+            <div class="modal fade" id="registerdiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="registerLabel">Register</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="name">ENTER NAME</label>
+                            <input type="text"  id="name"><br><br>
+                            <label for="upemailid">ENTER EMAIL ID</label>
+                            <input type="email" id="upemailid"><br><br>
+                            <label for="uppassword">ENTER PASSWORD</label>
+                            <input type="password" id="uppassword"><br><br>
+                            <label for="upconfirmpassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="upconfirmpassword"><br><br>
+                            <label for="mobilenumber">ENTER MOBILE NUMBER</label>
+                            <input type="text" id="mobilenumber" maxlength="10" minlength="10"><br><br>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        <nav id="subnav">
+            <span id="subnav1">
+                <a class="nav" href="#recommendedmovies">Movies</a>
+                <a class="nav" href="#recommendedmovies">Events</a>
+                <a class="nav" href="#recommendedmovies">Sports</a>
+                <a class="nav" href="#recommendedmovies">Activies</a>
+            </span>
+            <span id="subnav2">
+                <a class="nav2" href="#recommendedmovies" onclick="displayContact()" >List Your Shows</a>
+                <a class="nav2" href="#">Offers</a>
+                <a class="nav2" href="#">Gift Cards</a>
+                
+            </span>
+        </nav>
+    </header>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667241256491_web.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666862942745_rfghgfbc.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667478746175_indian.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666871968166_dfghjkjhgf.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667909415401_2werty.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div id="recommendedmovies">
+        <h4><b>Recommended Movies</b></h4><br>
+        <div id="carddiv">
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"> <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OS43LzEwICAzOS4ySyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00343241-pejbcwjyhn-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>LOVE TODAY</b><br>Drama/Romantic</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OS4xLzEwICAxMy40SyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00310792-qkfgylplju-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>BLACK PANTHAR-Wakanda <br>forever </b><br>Action/Advendure/Drama</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OS4yLzEwICA4LjlLIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00323318-dcstamlpka-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>YASHODA</b><br>Sci-Fci/Thriller</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"> <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ny4yLzEwICA1NDUgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00344126-vvkrrbhamu-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>MIRAL</b><br>Crime/Thriller</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OS4xLzEwICAxNS40SyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00342169-jevxlrzhmg-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>KANTARA(Tamil)</b><br>Advendure/Drama/Thriller</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ny45LzEwICAzSyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00343290-xlpcqruhac-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>KALAGA THALAIVAN(Tamil)</b><br>Action/Thriller</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MS4zSyBsaWtlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00343246-stcsvfgfbn-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>AGENT KANNAYIRAM(Tamil)</b><br>Comedy/Crime/Thriller</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <a href="bookticketscinema.html"><img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-NjA0IGxpa2Vz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00344938-uvxwqkgbbp-portrait.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <p class="card-text"><b>PATTATHU ARASAN(Tamil)</b><br>Drama</p>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+      <div id="listurshow">
+        <img src="https://in.bmscdn.com/webin/common/icons/hut.svg" alt="">
+        <span>LIST YOUR SHOW</span>
+        <span>Got a show, event, activity or a great experience? Partner with us</span>
+        <button id="contact" onclick="displayContact()" >CONTACT TODAY</button>
+      </div>
+      <div id="contactform">
+        <div id="contactsubdiv">
+          <div id="listheading"><h3>List Your Show</h3></div>
+          <form action="#">
+            <label for="name">Enter Your Name</label><br>
+            <input type="text" id="name" placeholder="Full Name" required><br><br>
+            <label for="mailid">Enter Your Email</label><br>
+            <input type="email" id="mailid" placeholder="Email id" required><br><br>
+            <label for="mobile">Enter Your Number</label><br>
+            <input type="number" id="mobile" placeholder="Mobile Number" required maxlength="10" minlength="10"><br><br>
+            <label for="host">What can you Host?</label><br>
+            <input type="text" id="host" placeholder="host type" required><br><br>
+            <label for="date">Date</label><br>
+            <input type="date" id="date" required><br><br>
+            <label for="eventcity">EVENT CITY</label><br>
+            <select id="eventcity">
+              <option value="Chennai">Chennai</option>
+              <option value="Trichy">Trichy</option>
+              <option value="Coimbatore">Coimbatore</option>
+            </select><br><br>
+            <label for="Audience">Audience Range</label><br>
+            <input type="range" min="0" max="100000" step="100" id="Audience" ><br><br>
+            <label for="about">About Event</label><br>
+            <textarea  id="about" cols="30" rows="10"></textarea><br><br>
+            <button>SUBMIT</button>
+            <button onclick="closeform()">CLOSE</button>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <br>
+        <div id="helphead" style="color: white;"><h4 style="margin-left:48% ;">Help</h4><hr></div>
+        <div id="help" style="margin-left: 30%;">
+            <div><a href="#" class="help">About us</a></div>
+            <div><a href="" class="help">Contact Us</a></div>
+            <div><a href="" class="help">FAQ's</a></div>
+            <div><a href="" class="help">Terms and Condition</a></div>
+            <div><a href="" class="help">Privacy</a></div>
+
+        </div><br><br>
+        <div id="footerlogo">
+          <a href="../booktickets.html"><img src="../bookticketimages/logo-no-background.png" alt="footlogo"></a>
+        </div><br>
+        <div id="applogo">
+            <span><i  class="fa-brands fa-facebook-f"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-youtube"></i></span>
+
+        </div>
+
+    </footer>
+      
+      
+    <script src="../javascript/booktickets.js"></script>
+    <script src="https://kit.fontawesome.com/4bf32c3ba6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTickets</title>
+    <link rel="stylesheet" href="../css/booktickets.css">
+    <link rel="shortcut icon" href="../bookticketimages/logo-no-background.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BookTickets</title>
+</head>
+<body id="book">
+    <header id="mainheader" class="header">
+        <nav id="mainnav">
+            <img src="../bookticketimages/logo-no-background.png" alt="logo">
+            <div class="input-group" id="searchdiv">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Search for Movies ,Events and Sports" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div id="selectcity">
+                <select name="Cities" id="cities">
+                    <option value="select cities">Select City</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Trichy">Trichy</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signindiv" id="signin">
+                Sign In
+            </button>
+            <div class="modal fade" id="signindiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="signinLabel">Sign In</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="emailid">ENTER EMAIL ID</label>
+                            <input type="email" id="emailid"><br><br>
+                            <label for="password">ENTER PASSWORD</label>
+                            <input type="password" id="password"><br><br>
+                            
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#registerdiv" id="register">
+                Register
+            </button>
+            <div class="modal fade" id="registerdiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="registerLabel">Register</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="name">ENTER NAME</label>
+                            <input type="text"  id="registername"><br><br>
+                            <label for="upemailid">ENTER EMAIL ID</label>
+                            <input type="email" id="upemailid"><br><br>
+                            <label for="uppassword">ENTER PASSWORD</label>
+                            <input type="password" id="uppassword"><br><br>
+                            <label for="upconfirmpassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="upconfirmpassword"><br><br>
+                            <label for="mobilenumber">ENTER MOBILE NUMBER</label>
+                            <input type="text" id="mobilenumber" maxlength="10" minlength="10"><br><br>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        <nav id="subnav">
+            <span id="subnav1">
+                <a class="nav" href="booktickets.html" target="_blank">Movies</a>
+                <a class="nav" href="booktickets.html" target="_blank">Events</a>
+                <a class="nav" href="booktickets.html" target="_blank">Sports</a>
+                <a class="nav" href="booktickets.html" target="_blank">Activies</a>
+            </span>
+            <span id="subnav2">
+                <a class="nav2" href="#" onclick="displayContact()" >List Your Shows</a>
+                <a class="nav2" href="#">Offers</a>
+                <a class="nav2" href="#">Gift Cards</a>
+                
+            </span>
+        </nav>
+    </header>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667241256491_web.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666862942745_rfghgfbc.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667478746175_indian.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666871968166_dfghjkjhgf.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667909415401_2werty.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <table>
+        <tr>
+            <th>U</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="u1" onclick="seatBooku1()">1</td><td></td>
+            <td class="seat" id="u2" onclick="seatBooku2()">2</td><td></td>
+            <td class="seat" id="u3" onclick="seatBooku3()">3</td><td></td>
+            <td class="seat" id="u4" onclick="seatBooku4()">4</td><td></td>
+            <td class="seat" id="u5" onclick="seatBooku5()">5</td><td></td>
+            <td class="seat" id="u6" onclick="seatBooku6()" >6</td><td></td>
+            <td class="seat" id="u7" onclick="seatBooku7()">7</td><td></td>
+            <td class="seat" id="u8" onclick="seatBooku8()">8</td><td></td>
+            <td class="seat" id="u9" onclick="seatBooku9()">9</td><td></td>
+            <td class="seat" id="u10" onclick="seatBooku10()">10</td><td></td>
+            <td class="seat" id="u11" onclick="seatBooku11()">11</td><td></td>
+            <td class="seat" id="u12" onclick="seatBooku12()">12</td><td></td>
+            <td class="seat" id="u13" onclick="seatBooku13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="u14" onclick="seatBooku14()">14</td><td></td>
+            <td class="seat" id="u15" onclick="seatBooku15()">15</td><td></td>
+            <td class="seat" id="u16" onclick="seatBooku16()">16</td><td></td>
+            <td class="seat" id="u17" onclick="seatBooku17()">17</td><td></td>
+            <td class="seat" id="u18" onclick="seatBooku18()">18</td><td></td>
+            <td class="seat" id="u19" onclick="seatBooku19()">19</td><td></td>
+            <td class="seat" id="u20" onclick="seatBooku20()">20</td><td></td>
+            <td class="seat" id="u21" onclick="seatBooku21()">21</td><td></td>
+            <td class="seat" id="u22" onclick="seatBooku22()">22</td><td></td>
+            <td class="seat" id="u23" onclick="seatBooku23()">23</td><td></td>
+            <td class="seat" id="u24" onclick="seatBooku24()">24</td><td></td>
+            <td class="seat" id="u25" onclick="seatBooku25()">25</td><td></td>
+            <td class="seat" id="u26" onclick="seatBooku26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>T</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="t1" onclick="seatBookt1()">1</td><td></td>
+            <td class="seat" id="t2" onclick="seatBookt2()">2</td><td></td>
+            <td class="seat" id="t3" onclick="seatBookt3()">3</td><td></td>
+            <td class="seat" id="t4" onclick="seatBookt4()">4</td><td></td>
+            <td class="seat" id="t5" onclick="seatBookt5()">5</td><td></td>
+            <td class="seat" id="t6" onclick="seatBookt6()" >6</td><td></td>
+            <td class="seat" id="t7" onclick="seatBookt7()">7</td><td></td>
+            <td class="seat" id="t8" onclick="seatBookt8()">8</td><td></td>
+            <td class="seat" id="t9" onclick="seatBookt9()">9</td><td></td>
+            <td class="seat" id="t10" onclick="seatBookt10()">10</td><td></td>
+            <td class="seat" id="t11" onclick="seatBookt11()">11</td><td></td>
+            <td class="seat" id="t12" onclick="seatBookt12()">12</td><td></td>
+            <td class="seat" id="t13" onclick="seatBookt13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="t14" onclick="seatBookt14()">14</td><td></td>
+            <td class="seat" id="t15" onclick="seatBookt15()">15</td><td></td>
+            <td class="seat" id="t16" onclick="seatBookt16()">16</td><td></td>
+            <td class="seat" id="t17" onclick="seatBookt17()">17</td><td></td>
+            <td class="seat" id="t18" onclick="seatBookt18()">18</td><td></td>
+            <td class="seat" id="t19" onclick="seatBookt19()">19</td><td></td>
+            <td class="seat" id="t20" onclick="seatBookt20()">20</td><td></td>
+            <td class="seat" id="t21" onclick="seatBookt21()">21</td><td></td>
+            <td class="seat" id="t22" onclick="seatBookt22()">22</td><td></td>
+            <td class="seat" id="t23" onclick="seatBookt23()">23</td><td></td>
+            <td class="seat" id="t24" onclick="seatBookt24()">24</td><td></td>
+            <td class="seat" id="t25" onclick="seatBookt25()">25</td><td></td>
+            <td class="seat" id="t26" onclick="seatBookt26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>S</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="s1" onclick="seatBooks1()">1</td><td></td>
+            <td class="seat" id="s2" onclick="seatBooks2()">2</td><td></td>
+            <td class="seat" id="s3" onclick="seatBooks3()">3</td><td></td>
+            <td class="seat" id="s4" onclick="seatBooks4()">4</td><td></td>
+            <td class="seat" id="s5" onclick="seatBooks5()">5</td><td></td>
+            <td class="seat" id="s6" onclick="seatBooks6()" >6</td><td></td>
+            <td class="seat" id="s7" onclick="seatBooks7()">7</td><td></td>
+            <td class="seat" id="s8" onclick="seatBooks8()">8</td><td></td>
+            <td class="seat" id="s9" onclick="seatBooks9()">9</td><td></td>
+            <td class="seat" id="s10" onclick="seatBooks10()">10</td><td></td>
+            <td class="seat" id="s11" onclick="seatBooks11()">11</td><td></td>
+            <td class="seat" id="s12" onclick="seatBooks12()">12</td><td></td>
+            <td class="seat" id="s13" onclick="seatBooks13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="s14" onclick="seatBooks14()">14</td><td></td>
+            <td class="seat" id="s15" onclick="seatBooks15()">15</td><td></td>
+            <td class="seat" id="s16" onclick="seatBooks16()">16</td><td></td>
+            <td class="seat" id="s17" onclick="seatBooks17()">17</td><td></td>
+            <td class="seat" id="s18" onclick="seatBooks18()">18</td><td></td>
+            <td class="seat" id="s19" onclick="seatBooks19()">19</td><td></td>
+            <td class="seat" id="s20" onclick="seatBooks20()">20</td><td></td>
+            <td class="seat" id="s21" onclick="seatBooks21()">21</td><td></td>
+            <td class="seat" id="s22" onclick="seatBooks22()">22</td><td></td>
+            <td class="seat" id="s23" onclick="seatBooks23()">23</td><td></td>
+            <td class="seat" id="s24" onclick="seatBooks24()">24</td><td></td>
+            <td class="seat" id="s25" onclick="seatBooks25()">25</td><td></td>
+            <td class="seat" id="s26" onclick="seatBooks26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>R</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="r1" onclick="seatBookr1()">1</td><td></td>
+            <td class="seat" id="r2" onclick="seatBookr2()">2</td><td></td>
+            <td class="seat" id="r3" onclick="seatBookr3()">3</td><td></td>
+            <td class="seat" id="r4" onclick="seatBookr4()">4</td><td></td>
+            <td class="seat" id="r5" onclick="seatBookr5()">5</td><td></td>
+            <td class="seat" id="r6" onclick="seatBookr6()" >6</td><td></td>
+            <td class="seat" id="r7" onclick="seatBookr7()">7</td><td></td>
+            <td class="seat" id="r8" onclick="seatBookr8()">8</td><td></td>
+            <td class="seat" id="r9" onclick="seatBookr9()">9</td><td></td>
+            <td class="seat" id="r10" onclick="seatBookr10()">10</td><td></td>
+            <td class="seat" id="r11" onclick="seatBookr11()">11</td><td></td>
+            <td class="seat" id="r12" onclick="seatBookr12()">12</td><td></td>
+            <td class="seat" id="r13" onclick="seatBookr13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="r14" onclick="seatBookr14()">14</td><td></td>
+            <td class="seat" id="r15" onclick="seatBookr15()">15</td><td></td>
+            <td class="seat" id="r16" onclick="seatBookr16()">16</td><td></td>
+            <td class="seat" id="r17" onclick="seatBookr17()">17</td><td></td>
+            <td class="seat" id="r18" onclick="seatBookr18()">18</td><td></td>
+            <td class="seat" id="r19" onclick="seatBookr19()">19</td><td></td>
+            <td class="seat" id="r20" onclick="seatBookr20()">20</td><td></td>
+            <td class="seat" id="r21" onclick="seatBookr21()">21</td><td></td>
+            <td class="seat" id="r22" onclick="seatBookr22()">22</td><td></td>
+            <td class="seat" id="r23" onclick="seatBookr23()">23</td><td></td>
+            <td class="seat" id="r24" onclick="seatBookr24()">24</td><td></td>
+            <td class="seat" id="r25" onclick="seatBookr25()">25</td><td></td>
+            <td class="seat" id="r26" onclick="seatBookr26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>Q</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="q1" onclick="seatBookq1()">1</td><td></td>
+            <td class="seat" id="q2" onclick="seatBookq2()">2</td><td></td>
+            <td class="seat" id="q3" onclick="seatBookq3()">3</td><td></td>
+            <td class="seat" id="q4" onclick="seatBookq4()">4</td><td></td>
+            <td class="seat" id="q5" onclick="seatBookq5()">5</td><td></td>
+            <td class="seat" id="q6" onclick="seatBookq6()" >6</td><td></td>
+            <td class="seat" id="q7" onclick="seatBookq7()">7</td><td></td>
+            <td class="seat" id="q8" onclick="seatBookq8()">8</td><td></td>
+            <td class="seat" id="q9" onclick="seatBookq9()">9</td><td></td>
+            <td class="seat" id="q10" onclick="seatBookq10()">10</td><td></td>
+            <td class="seat" id="q11" onclick="seatBookq11()">11</td><td></td>
+            <td class="seat" id="q12" onclick="seatBookq12()">12</td><td></td>
+            <td class="seat" id="q13" onclick="seatBookq13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="q14" onclick="seatBookq14()">14</td><td></td>
+            <td class="seat" id="q15" onclick="seatBookq15()">15</td><td></td>
+            <td class="seat" id="q16" onclick="seatBookq16()">16</td><td></td>
+            <td class="seat" id="q17" onclick="seatBookq17()">17</td><td></td>
+            <td class="seat" id="q18" onclick="seatBookq18()">18</td><td></td>
+            <td class="seat" id="q19" onclick="seatBookq19()">19</td><td></td>
+            <td class="seat" id="q20" onclick="seatBookq20()">20</td><td></td>
+            <td class="seat" id="q21" onclick="seatBookq21()">21</td><td></td>
+            <td class="seat" id="q22" onclick="seatBookq22()">22</td><td></td>
+            <td class="seat" id="q23" onclick="seatBookq23()">23</td><td></td>
+            <td class="seat" id="q24" onclick="seatBookq24()">24</td><td></td>
+            <td class="seat" id="q25" onclick="seatBookq25()">25</td><td></td>
+            <td class="seat" id="q26" onclick="seatBookq26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>P</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="p1" onclick="seatBookp1()">1</td><td></td>
+            <td class="seat" id="p2" onclick="seatBookp2()">2</td><td></td>
+            <td class="seat" id="p3" onclick="seatBookp3()">3</td><td></td>
+            <td class="seat" id="p4" onclick="seatBookp4()">4</td><td></td>
+            <td class="seat" id="p5" onclick="seatBookp5()">5</td><td></td>
+            <td class="seat" id="p6" onclick="seatBookp6()" >6</td><td></td>
+            <td class="seat" id="p7" onclick="seatBookp7()">7</td><td></td>
+            <td class="seat" id="p8" onclick="seatBookp8()">8</td><td></td>
+            <td class="seat" id="p9" onclick="seatBookp9()">9</td><td></td>
+            <td class="seat" id="p10" onclick="seatBookp10()">10</td><td></td>
+            <td class="seat" id="p11" onclick="seatBookp11()">11</td><td></td>
+            <td class="seat" id="p12" onclick="seatBookp12()">12</td><td></td>
+            <td class="seat" id="p13" onclick="seatBookp13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="p14" onclick="seatBookp14()">14</td><td></td>
+            <td class="seat" id="p15" onclick="seatBookp15()">15</td><td></td>
+            <td class="seat" id="p16" onclick="seatBookp16()">16</td><td></td>
+            <td class="seat" id="p17" onclick="seatBookp17()">17</td><td></td>
+            <td class="seat" id="p18" onclick="seatBookp18()">18</td><td></td>
+            <td class="seat" id="p19" onclick="seatBookp19()">19</td><td></td>
+            <td class="seat" id="p20" onclick="seatBookp20()">20</td><td></td>
+            <td class="seat" id="p21" onclick="seatBookp21()">21</td><td></td>
+            <td class="seat" id="p22" onclick="seatBookp22()">22</td><td></td>
+            <td class="seat" id="p23" onclick="seatBookp23()">23</td><td></td>
+            <td class="seat" id="p24" onclick="seatBookp24()">24</td><td></td>
+            <td class="seat" id="p25" onclick="seatBookp25()">25</td><td></td>
+            <td class="seat" id="p26" onclick="seatBookp26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>O</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="o1" onclick="seatBooko1()">1</td><td></td>
+            <td class="seat" id="o2" onclick="seatBooko2()">2</td><td></td>
+            <td class="seat" id="o3" onclick="seatBooko3()">3</td><td></td>
+            <td class="seat" id="o4" onclick="seatBooko4()">4</td><td></td>
+            <td class="seat" id="o5" onclick="seatBooko5()">5</td><td></td>
+            <td class="seat" id="o6" onclick="seatBooko6()" >6</td><td></td>
+            <td class="seat" id="o7" onclick="seatBooko7()">7</td><td></td>
+            <td class="seat" id="o8" onclick="seatBooko8()">8</td><td></td>
+            <td class="seat" id="o9" onclick="seatBooko9()">9</td><td></td>
+            <td class="seat" id="o10" onclick="seatBooko10()">10</td><td></td>
+            <td class="seat" id="o11" onclick="seatBooko11()">11</td><td></td>
+            <td class="seat" id="o12" onclick="seatBooko12()">12</td><td></td>
+            <td class="seat" id="o13" onclick="seatBooko13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="o14" onclick="seatBooko14()">14</td><td></td>
+            <td class="seat" id="o15" onclick="seatBooko15()">15</td><td></td>
+            <td class="seat" id="o16" onclick="seatBooko16()">16</td><td></td>
+            <td class="seat" id="o17" onclick="seatBooko17()">17</td><td></td>
+            <td class="seat" id="o18" onclick="seatBooko18()">18</td><td></td>
+            <td class="seat" id="o19" onclick="seatBooko19()">19</td><td></td>
+            <td class="seat" id="o20" onclick="seatBooko20()">20</td><td></td>
+            <td class="seat" id="o21" onclick="seatBooko21()">21</td><td></td>
+            <td class="seat" id="o22" onclick="seatBooko22()">22</td><td></td>
+            <td class="seat" id="o23" onclick="seatBooko23()">23</td><td></td>
+            <td class="seat" id="o24" onclick="seatBooko24()">24</td><td></td>
+            <td class="seat" id="o25" onclick="seatBooko25()">25</td><td></td>
+            <td class="seat" id="o26" onclick="seatBooko26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>N</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="n1" onclick="seatBookn1()">1</td><td></td>
+            <td class="seat" id="n2" onclick="seatBookn2()">2</td><td></td>
+            <td class="seat" id="n3" onclick="seatBookn3()">3</td><td></td>
+            <td class="seat" id="n4" onclick="seatBookn4()">4</td><td></td>
+            <td class="seat" id="n5" onclick="seatBookn5()">5</td><td></td>
+            <td class="seat" id="n6" onclick="seatBookn6()" >6</td><td></td>
+            <td class="seat" id="n7" onclick="seatBookn7()">7</td><td></td>
+            <td class="seat" id="n8" onclick="seatBookn8()">8</td><td></td>
+            <td class="seat" id="n9" onclick="seatBookn9()">9</td><td></td>
+            <td class="seat" id="n10" onclick="seatBookn10()">10</td><td></td>
+            <td class="seat" id="n11" onclick="seatBookn11()">11</td><td></td>
+            <td class="seat" id="n12" onclick="seatBookn12()">12</td><td></td>
+            <td class="seat" id="n13" onclick="seatBookn13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="n14" onclick="seatBookn14()">14</td><td></td>
+            <td class="seat" id="n15" onclick="seatBookn15()">15</td><td></td>
+            <td class="seat" id="n16" onclick="seatBookn16()">16</td><td></td>
+            <td class="seat" id="n17" onclick="seatBookn17()">17</td><td></td>
+            <td class="seat" id="n18" onclick="seatBookn18()">18</td><td></td>
+            <td class="seat" id="n19" onclick="seatBookn19()">19</td><td></td>
+            <td class="seat" id="n20" onclick="seatBookn20()">20</td><td></td>
+            <td class="seat" id="n21" onclick="seatBookn21()">21</td><td></td>
+            <td class="seat" id="n22" onclick="seatBookn22()">22</td><td></td>
+            <td class="seat" id="n23" onclick="seatBookn23()">23</td><td></td>
+            <td class="seat" id="n24" onclick="seatBookn24()">24</td><td></td>
+            <td class="seat" id="n25" onclick="seatBookn25()">25</td><td></td>
+            <td class="seat" id="n26" onclick="seatBookn26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>M</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="m1" onclick="seatBookm1()">1</td><td></td>
+            <td class="seat" id="m2" onclick="seatBookm2()">2</td><td></td>
+            <td class="seat" id="m3" onclick="seatBookm3()">3</td><td></td>
+            <td class="seat" id="m4" onclick="seatBookm4()">4</td><td></td>
+            <td class="seat" id="m5" onclick="seatBookm5()">5</td><td></td>
+            <td class="seat" id="m6" onclick="seatBookm6()" >6</td><td></td>
+            <td class="seat" id="m7" onclick="seatBookm7()">7</td><td></td>
+            <td class="seat" id="m8" onclick="seatBookm8()">8</td><td></td>
+            <td class="seat" id="m9" onclick="seatBookm9()">9</td><td></td>
+            <td class="seat" id="m10" onclick="seatBookm10()">10</td><td></td>
+            <td class="seat" id="m11" onclick="seatBookm11()">11</td><td></td>
+            <td class="seat" id="m12" onclick="seatBookm12()">12</td><td></td>
+            <td class="seat" id="m13" onclick="seatBookm13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="m14" onclick="seatBookm14()">14</td><td></td>
+            <td class="seat" id="m15" onclick="seatBookm15()">15</td><td></td>
+            <td class="seat" id="m16" onclick="seatBookm16()">16</td><td></td>
+            <td class="seat" id="m17" onclick="seatBookm17()">17</td><td></td>
+            <td class="seat" id="m18" onclick="seatBookm18()">18</td><td></td>
+            <td class="seat" id="m19" onclick="seatBookm19()">19</td><td></td>
+            <td class="seat" id="m20" onclick="seatBookm20()">20</td><td></td>
+            <td class="seat" id="m21" onclick="seatBookm21()">21</td><td></td>
+            <td class="seat" id="m22" onclick="seatBookm22()">22</td><td></td>
+            <td class="seat" id="m23" onclick="seatBookm23()">23</td><td></td>
+            <td class="seat" id="m24" onclick="seatBookm24()">24</td><td></td>
+            <td class="seat" id="m25" onclick="seatBookm25()">25</td><td></td>
+            <td class="seat" id="m26" onclick="seatBookm26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>L</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="l1" onclick="seatBookl1()">1</td><td></td>
+            <td class="seat" id="l2" onclick="seatBookl2()">2</td><td></td>
+            <td class="seat" id="l3" onclick="seatBookl3()">3</td><td></td>
+            <td class="seat" id="l4" onclick="seatBookl4()">4</td><td></td>
+            <td class="seat" id="l5" onclick="seatBookl5()">5</td><td></td>
+            <td class="seat" id="l6" onclick="seatBookl6()" >6</td><td></td>
+            <td class="seat" id="l7" onclick="seatBookl7()">7</td><td></td>
+            <td class="seat" id="l8" onclick="seatBookl8()">8</td><td></td>
+            <td class="seat" id="l9" onclick="seatBookl9()">9</td><td></td>
+            <td class="seat" id="l10" onclick="seatBookl10()">10</td><td></td>
+            <td class="seat" id="l11" onclick="seatBookl11()">11</td><td></td>
+            <td class="seat" id="l12" onclick="seatBookl12()">12</td><td></td>
+            <td class="seat" id="l13" onclick="seatBookl13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="l14" onclick="seatBookl14()">14</td><td></td>
+            <td class="seat" id="l15" onclick="seatBookl15()">15</td><td></td>
+            <td class="seat" id="l16" onclick="seatBookl16()">16</td><td></td>
+            <td class="seat" id="l17" onclick="seatBookl17()">17</td><td></td>
+            <td class="seat" id="l18" onclick="seatBookl18()">18</td><td></td>
+            <td class="seat" id="l19" onclick="seatBookl19()">19</td><td></td>
+            <td class="seat" id="l20" onclick="seatBookl20()">20</td><td></td>
+            <td class="seat" id="l21" onclick="seatBookl21()">21</td><td></td>
+            <td class="seat" id="l22" onclick="seatBookl22()">22</td><td></td>
+            <td class="seat" id="l23" onclick="seatBookl23()">23</td><td></td>
+            <td class="seat" id="l24" onclick="seatBookl24()">24</td><td></td>
+            <td class="seat" id="l25" onclick="seatBookl25()">25</td><td></td>
+            <td class="seat" id="l26" onclick="seatBookl26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>K</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="k1" onclick="seatBookk1()">1</td><td></td>
+            <td class="seat" id="k2" onclick="seatBookk2()">2</td><td></td>
+            <td class="seat" id="k3" onclick="seatBookk3()">3</td><td></td>
+            <td class="seat" id="k4" onclick="seatBookk4()">4</td><td></td>
+            <td class="seat" id="k5" onclick="seatBookk5()">5</td><td></td>
+            <td class="seat" id="k6" onclick="seatBookk6()" >6</td><td></td>
+            <td class="seat" id="k7" onclick="seatBookk7()">7</td><td></td>
+            <td class="seat" id="k8" onclick="seatBookk8()">8</td><td></td>
+            <td class="seat" id="k9" onclick="seatBookk9()">9</td><td></td>
+            <td class="seat" id="k10" onclick="seatBookk10()">10</td><td></td>
+            <td class="seat" id="k11" onclick="seatBookk11()">11</td><td></td>
+            <td class="seat" id="k12" onclick="seatBookk12()">12</td><td></td>
+            <td class="seat" id="k13" onclick="seatBookk13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="k14" onclick="seatBookk14()">14</td><td></td>
+            <td class="seat" id="k15" onclick="seatBookk15()">15</td><td></td>
+            <td class="seat" id="k16" onclick="seatBookk16()">16</td><td></td>
+            <td class="seat" id="k17" onclick="seatBookk17()">17</td><td></td>
+            <td class="seat" id="k18" onclick="seatBookk18()">18</td><td></td>
+            <td class="seat" id="k19" onclick="seatBookk19()">19</td><td></td>
+            <td class="seat" id="k20" onclick="seatBookk20()">20</td><td></td>
+            <td class="seat" id="k21" onclick="seatBookk21()">21</td><td></td>
+            <td class="seat" id="k22" onclick="seatBookk22()">22</td><td></td>
+            <td class="seat" id="k23" onclick="seatBookk23()">23</td><td></td>
+            <td class="seat" id="k24" onclick="seatBookk24()">24</td><td></td>
+            <td class="seat" id="k25" onclick="seatBookk25()">25</td><td></td>
+            <td class="seat" id="k26" onclick="seatBookk26()">26</td><td></td>
+        </tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td><hr></td></tr>
+        <tr>
+            <th>J</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="j1" onclick="seatBookj1()">1</td><td></td>
+            <td class="seat" id="j2" onclick="seatBookj2()">2</td><td></td>
+            <td class="seat" id="j3" onclick="seatBookj3()">3</td><td></td>
+            <td class="seat" id="j4" onclick="seatBookj4()">4</td><td></td>
+            <td class="seat" id="j5" onclick="seatBookj5()">5</td><td></td>
+            <td class="seat" id="j6" onclick="seatBookj6()" >6</td><td></td>
+            <td class="seat" id="j7" onclick="seatBookj7()">7</td><td></td>
+            <td class="seat" id="j8" onclick="seatBookj8()">8</td><td></td>
+            <td class="seat" id="j9" onclick="seatBookj9()">9</td><td></td>
+            <td class="seat" id="j10" onclick="seatBookj10()">10</td><td></td>
+            <td class="seat" id="j11" onclick="seatBookj11()">11</td><td></td>
+            <td class="seat" id="j12" onclick="seatBookj12()">12</td><td></td>
+            <td class="seat" id="j13" onclick="seatBookj13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="j14" onclick="seatBookj14()">14</td><td></td>
+            <td class="seat" id="j15" onclick="seatBookj15()">15</td><td></td>
+            <td class="seat" id="j16" onclick="seatBookj16()">16</td><td></td>
+            <td class="seat" id="j17" onclick="seatBookj17()">17</td><td></td>
+            <td class="seat" id="j18" onclick="seatBookj18()">18</td><td></td>
+            <td class="seat" id="j19" onclick="seatBookj19()">19</td><td></td>
+            <td class="seat" id="j20" onclick="seatBookj20()">20</td><td></td>
+            <td class="seat" id="j21" onclick="seatBookj21()">21</td><td></td>
+            <td class="seat" id="j22" onclick="seatBookj22()">22</td><td></td>
+            <td class="seat" id="j23" onclick="seatBookj23()">23</td><td></td>
+            <td class="seat" id="j24" onclick="seatBookj24()">24</td><td></td>
+            <td class="seat" id="j25" onclick="seatBookj25()">25</td><td></td>
+            <td class="seat" id="j26" onclick="seatBookj26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>I</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="i1" onclick="seatBooki1()">1</td><td></td>
+            <td class="seat" id="i2" onclick="seatBooki2()">2</td><td></td>
+            <td class="seat" id="i3" onclick="seatBooki3()">3</td><td></td>
+            <td class="seat" id="i4" onclick="seatBooki4()">4</td><td></td>
+            <td class="seat" id="i5" onclick="seatBooki5()">5</td><td></td>
+            <td class="seat" id="i6" onclick="seatBooki6()" >6</td><td></td>
+            <td class="seat" id="i7" onclick="seatBooki7()">7</td><td></td>
+            <td class="seat" id="i8" onclick="seatBooki8()">8</td><td></td>
+            <td class="seat" id="i9" onclick="seatBooki9()">9</td><td></td>
+            <td class="seat" id="i10" onclick="seatBooki10()">10</td><td></td>
+            <td class="seat" id="i11" onclick="seatBooki11()">11</td><td></td>
+            <td class="seat" id="i12" onclick="seatBooki12()">12</td><td></td>
+            <td class="seat" id="i13" onclick="seatBooki13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="i14" onclick="seatBooki14()">14</td><td></td>
+            <td class="seat" id="i15" onclick="seatBooki15()">15</td><td></td>
+            <td class="seat" id="i16" onclick="seatBooki16()">16</td><td></td>
+            <td class="seat" id="i17" onclick="seatBooki17()">17</td><td></td>
+            <td class="seat" id="i18" onclick="seatBooki18()">18</td><td></td>
+            <td class="seat" id="i19" onclick="seatBooki19()">19</td><td></td>
+            <td class="seat" id="i20" onclick="seatBooki20()">20</td><td></td>
+            <td class="seat" id="i21" onclick="seatBooki21()">21</td><td></td>
+            <td class="seat" id="i22" onclick="seatBooki22()">22</td><td></td>
+            <td class="seat" id="i23" onclick="seatBooki23()">23</td><td></td>
+            <td class="seat" id="i24" onclick="seatBooki24()">24</td><td></td>
+            <td class="seat" id="i25" onclick="seatBooki25()">25</td><td></td>
+            <td class="seat" id="i26" onclick="seatBooki26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>H</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="h1" onclick="seatBookh1()">1</td><td></td>
+            <td class="seat" id="h2" onclick="seatBookh2()">2</td><td></td>
+            <td class="seat" id="h3" onclick="seatBookh3()">3</td><td></td>
+            <td class="seat" id="h4" onclick="seatBookh4()">4</td><td></td>
+            <td class="seat" id="h5" onclick="seatBookh5()">5</td><td></td>
+            <td class="seat" id="h6" onclick="seatBookh6()" >6</td><td></td>
+            <td class="seat" id="h7" onclick="seatBookh7()">7</td><td></td>
+            <td class="seat" id="h8" onclick="seatBookh8()">8</td><td></td>
+            <td class="seat" id="h9" onclick="seatBookh9()">9</td><td></td>
+            <td class="seat" id="h10" onclick="seatBookh10()">10</td><td></td>
+            <td class="seat" id="h11" onclick="seatBookh11()">11</td><td></td>
+            <td class="seat" id="h12" onclick="seatBookh12()">12</td><td></td>
+            <td class="seat" id="h13" onclick="seatBookh13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="h14" onclick="seatBookh14()">14</td><td></td>
+            <td class="seat" id="h15" onclick="seatBookh15()">15</td><td></td>
+            <td class="seat" id="h16" onclick="seatBookh16()">16</td><td></td>
+            <td class="seat" id="h17" onclick="seatBookh17()">17</td><td></td>
+            <td class="seat" id="h18" onclick="seatBookh18()">18</td><td></td>
+            <td class="seat" id="h19" onclick="seatBookh19()">19</td><td></td>
+            <td class="seat" id="h20" onclick="seatBookh20()">20</td><td></td>
+            <td class="seat" id="h21" onclick="seatBookh21()">21</td><td></td>
+            <td class="seat" id="h22" onclick="seatBookh22()">22</td><td></td>
+            <td class="seat" id="h23" onclick="seatBookh23()">23</td><td></td>
+            <td class="seat" id="h24" onclick="seatBookh24()">24</td><td></td>
+            <td class="seat" id="h25" onclick="seatBookh25()">25</td><td></td>
+            <td class="seat" id="h26" onclick="seatBookh26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>G</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="g1" onclick="seatBookg1()">1</td><td></td>
+            <td class="seat" id="g2" onclick="seatBookg2()">2</td><td></td>
+            <td class="seat" id="g3" onclick="seatBookg3()">3</td><td></td>
+            <td class="seat" id="g4" onclick="seatBookg4()">4</td><td></td>
+            <td class="seat" id="g5" onclick="seatBookg5()">5</td><td></td>
+            <td class="seat" id="g6" onclick="seatBookg6()" >6</td><td></td>
+            <td class="seat" id="g7" onclick="seatBookg7()">7</td><td></td>
+            <td class="seat" id="g8" onclick="seatBookg8()">8</td><td></td>
+            <td class="seat" id="g9" onclick="seatBookg9()">9</td><td></td>
+            <td class="seat" id="g10" onclick="seatBookg10()">10</td><td></td>
+            <td class="seat" id="g11" onclick="seatBookg11()">11</td><td></td>
+            <td class="seat" id="g12" onclick="seatBookg12()">12</td><td></td>
+            <td class="seat" id="g13" onclick="seatBookg13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="g14" onclick="seatBookg14()">14</td><td></td>
+            <td class="seat" id="g15" onclick="seatBookg15()">15</td><td></td>
+            <td class="seat" id="g16" onclick="seatBookg16()">16</td><td></td>
+            <td class="seat" id="g17" onclick="seatBookg17()">17</td><td></td>
+            <td class="seat" id="g18" onclick="seatBookg18()">18</td><td></td>
+            <td class="seat" id="g19" onclick="seatBookg19()">19</td><td></td>
+            <td class="seat" id="g20" onclick="seatBookg20()">20</td><td></td>
+            <td class="seat" id="g21" onclick="seatBookg21()">21</td><td></td>
+            <td class="seat" id="g22" onclick="seatBookg22()">22</td><td></td>
+            <td class="seat" id="g23" onclick="seatBookg23()">23</td><td></td>
+            <td class="seat" id="g24" onclick="seatBookg24()">24</td><td></td>
+            <td class="seat" id="g25" onclick="seatBookg25()">25</td><td></td>
+            <td class="seat" id="g26" onclick="seatBookg26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>F</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="f1" onclick="seatBookf1()">1</td><td></td>
+            <td class="seat" id="f2" onclick="seatBookf2()">2</td><td></td>
+            <td class="seat" id="f3" onclick="seatBookf3()">3</td><td></td>
+            <td class="seat" id="f4" onclick="seatBookf4()">4</td><td></td>
+            <td class="seat" id="f5" onclick="seatBookf5()">5</td><td></td>
+            <td class="seat" id="f6" onclick="seatBookf6()" >6</td><td></td>
+            <td class="seat" id="f7" onclick="seatBookf7()">7</td><td></td>
+            <td class="seat" id="f8" onclick="seatBookf8()">8</td><td></td>
+            <td class="seat" id="f9" onclick="seatBookf9()">9</td><td></td>
+            <td class="seat" id="f10" onclick="seatBookf10()">10</td><td></td>
+            <td class="seat" id="f11" onclick="seatBookf11()">11</td><td></td>
+            <td class="seat" id="f12" onclick="seatBookf12()">12</td><td></td>
+            <td class="seat" id="f13" onclick="seatBookf13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="f14" onclick="seatBookf14()">14</td><td></td>
+            <td class="seat" id="f15" onclick="seatBookf15()">15</td><td></td>
+            <td class="seat" id="f16" onclick="seatBookf16()">16</td><td></td>
+            <td class="seat" id="f17" onclick="seatBookf17()">17</td><td></td>
+            <td class="seat" id="f18" onclick="seatBookf18()">18</td><td></td>
+            <td class="seat" id="f19" onclick="seatBookf19()">19</td><td></td>
+            <td class="seat" id="f20" onclick="seatBookf20()">20</td><td></td>
+            <td class="seat" id="f21" onclick="seatBookf21()">21</td><td></td>
+            <td class="seat" id="f22" onclick="seatBookf22()">22</td><td></td>
+            <td class="seat" id="f23" onclick="seatBookf23()">23</td><td></td>
+            <td class="seat" id="f24" onclick="seatBookf24()">24</td><td></td>
+            <td class="seat" id="f25" onclick="seatBookf25()">25</td><td></td>
+            <td class="seat" id="f26" onclick="seatBookf26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>E</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="e1" onclick="seatBooke1()">1</td><td></td>
+            <td class="seat" id="e2" onclick="seatBooke2()">2</td><td></td>
+            <td class="seat" id="e3" onclick="seatBooke3()">3</td><td></td>
+            <td class="seat" id="e4" onclick="seatBooke4()">4</td><td></td>
+            <td class="seat" id="e5" onclick="seatBooke5()">5</td><td></td>
+            <td class="seat" id="e6" onclick="seatBooke6()" >6</td><td></td>
+            <td class="seat" id="e7" onclick="seatBooke7()">7</td><td></td>
+            <td class="seat" id="e8" onclick="seatBooke8()">8</td><td></td>
+            <td class="seat" id="e9" onclick="seatBooke9()">9</td><td></td>
+            <td class="seat" id="e10" onclick="seatBooke10()">10</td><td></td>
+            <td class="seat" id="e11" onclick="seatBooke11()">11</td><td></td>
+            <td class="seat" id="e12" onclick="seatBooke12()">12</td><td></td>
+            <td class="seat" id="e13" onclick="seatBooke13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="e14" onclick="seatBooke14()">14</td><td></td>
+            <td class="seat" id="e15" onclick="seatBooke15()">15</td><td></td>
+            <td class="seat" id="e16" onclick="seatBooke16()">16</td><td></td>
+            <td class="seat" id="e17" onclick="seatBooke17()">17</td><td></td>
+            <td class="seat" id="e18" onclick="seatBooke18()">18</td><td></td>
+            <td class="seat" id="e19" onclick="seatBooke19()">19</td><td></td>
+            <td class="seat" id="e20" onclick="seatBooke20()">20</td><td></td>
+            <td class="seat" id="e21" onclick="seatBooke21()">21</td><td></td>
+            <td class="seat" id="e22" onclick="seatBooke22()">22</td><td></td>
+            <td class="seat" id="e23" onclick="seatBooke23()">23</td><td></td>
+            <td class="seat" id="e24" onclick="seatBooke24()">24</td><td></td>
+            <td class="seat" id="e25" onclick="seatBooke25()">25</td><td></td>
+            <td class="seat" id="e26" onclick="seatBooke26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>D</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="d1" onclick="seatBookd1()">1</td><td></td>
+            <td class="seat" id="d2" onclick="seatBookd2()">2</td><td></td>
+            <td class="seat" id="d3" onclick="seatBookd3()">3</td><td></td>
+            <td class="seat" id="d4" onclick="seatBookd4()">4</td><td></td>
+            <td class="seat" id="d5" onclick="seatBookd5()">5</td><td></td>
+            <td class="seat" id="d6" onclick="seatBookd6()" >6</td><td></td>
+            <td class="seat" id="d7" onclick="seatBookd7()">7</td><td></td>
+            <td class="seat" id="d8" onclick="seatBookd8()">8</td><td></td>
+            <td class="seat" id="d9" onclick="seatBookd9()">9</td><td></td>
+            <td class="seat" id="d10" onclick="seatBookd10()">10</td><td></td>
+            <td class="seat" id="d11" onclick="seatBookd11()">11</td><td></td>
+            <td class="seat" id="d12" onclick="seatBookd12()">12</td><td></td>
+            <td class="seat" id="d13" onclick="seatBookd13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="d14" onclick="seatBookd14()">14</td><td></td>
+            <td class="seat" id="d15" onclick="seatBookd15()">15</td><td></td>
+            <td class="seat" id="d16" onclick="seatBookd16()">16</td><td></td>
+            <td class="seat" id="d17" onclick="seatBookd17()">17</td><td></td>
+            <td class="seat" id="d18" onclick="seatBookd18()">18</td><td></td>
+            <td class="seat" id="d19" onclick="seatBookd19()">19</td><td></td>
+            <td class="seat" id="d20" onclick="seatBookd20()">20</td><td></td>
+            <td class="seat" id="d21" onclick="seatBookd21()">21</td><td></td>
+            <td class="seat" id="d22" onclick="seatBookd22()">22</td><td></td>
+            <td class="seat" id="d23" onclick="seatBookd23()">23</td><td></td>
+            <td class="seat" id="d24" onclick="seatBookd24()">24</td><td></td>
+            <td class="seat" id="d25" onclick="seatBookd25()">25</td><td></td>
+            <td class="seat" id="d26" onclick="seatBookd26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>C</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="c1" onclick="seatBookc1()">1</td><td></td>
+            <td class="seat" id="c2" onclick="seatBookc2()">2</td><td></td>
+            <td class="seat" id="c3" onclick="seatBookc3()">3</td><td></td>
+            <td class="seat" id="c4" onclick="seatBookc4()">4</td><td></td>
+            <td class="seat" id="c5" onclick="seatBookc5()">5</td><td></td>
+            <td class="seat" id="c6" onclick="seatBookc6()" >6</td><td></td>
+            <td class="seat" id="c7" onclick="seatBookc7()">7</td><td></td>
+            <td class="seat" id="c8" onclick="seatBookc8()">8</td><td></td>
+            <td class="seat" id="c9" onclick="seatBookc9()">9</td><td></td>
+            <td class="seat" id="c10" onclick="seatBookc10()">10</td><td></td>
+            <td class="seat" id="c11" onclick="seatBookc11()">11</td><td></td>
+            <td class="seat" id="c12" onclick="seatBookc12()">12</td><td></td>
+            <td class="seat" id="c13" onclick="seatBookc13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="c14" onclick="seatBookc14()">14</td><td></td>
+            <td class="seat" id="c15" onclick="seatBookc15()">15</td><td></td>
+            <td class="seat" id="c16" onclick="seatBookc16()">16</td><td></td>
+            <td class="seat" id="c17" onclick="seatBookc17()">17</td><td></td>
+            <td class="seat" id="c18" onclick="seatBookc18()">18</td><td></td>
+            <td class="seat" id="c19" onclick="seatBookc19()">19</td><td></td>
+            <td class="seat" id="c20" onclick="seatBookc20()">20</td><td></td>
+            <td class="seat" id="c21" onclick="seatBookc21()">21</td><td></td>
+            <td class="seat" id="c22" onclick="seatBookc22()">22</td><td></td>
+            <td class="seat" id="c23" onclick="seatBookc23()">23</td><td></td>
+            <td class="seat" id="c24" onclick="seatBookc24()">24</td><td></td>
+            <td class="seat" id="c25" onclick="seatBookc25()">25</td><td></td>
+            <td class="seat" id="c26" onclick="seatBookc26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>B</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="b1" onclick="seatBookb1()">1</td><td></td>
+            <td class="seat" id="b2" onclick="seatBookb2()">2</td><td></td>
+            <td class="seat" id="b3" onclick="seatBookb3()">3</td><td></td>
+            <td class="seat" id="b4" onclick="seatBookb4()">4</td><td></td>
+            <td class="seat" id="b5" onclick="seatBookb5()">5</td><td></td>
+            <td class="seat" id="b6" onclick="seatBookb6()" >6</td><td></td>
+            <td class="seat" id="b7" onclick="seatBookb7()">7</td><td></td>
+            <td class="seat" id="b8" onclick="seatBookb8()">8</td><td></td>
+            <td class="seat" id="b9" onclick="seatBookb9()">9</td><td></td>
+            <td class="seat" id="b10" onclick="seatBookb10()">10</td><td></td>
+            <td class="seat" id="b11" onclick="seatBookb11()">11</td><td></td>
+            <td class="seat" id="b12" onclick="seatBookb12()">12</td><td></td>
+            <td class="seat" id="b13" onclick="seatBookb13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="b14" onclick="seatBookb14()">14</td><td></td>
+            <td class="seat" id="b15" onclick="seatBookb15()">15</td><td></td>
+            <td class="seat" id="b16" onclick="seatBookb16()">16</td><td></td>
+            <td class="seat" id="b17" onclick="seatBookb17()">17</td><td></td>
+            <td class="seat" id="b18" onclick="seatBookb18()">18</td><td></td>
+            <td class="seat" id="b19" onclick="seatBookb19()">19</td><td></td>
+            <td class="seat" id="b20" onclick="seatBookb20()">20</td><td></td>
+            <td class="seat" id="b21" onclick="seatBookb21()">21</td><td></td>
+            <td class="seat" id="b22" onclick="seatBookb22()">22</td><td></td>
+            <td class="seat" id="b23" onclick="seatBookb23()">23</td><td></td>
+            <td class="seat" id="b24" onclick="seatBookb24()">24</td><td></td>
+            <td class="seat" id="b25" onclick="seatBookb25()">25</td><td></td>
+            <td class="seat" id="b26" onclick="seatBookb26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+        <tr>
+            <th>A</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="a1" onclick="seatBooka1()">1</td><td></td>
+            <td class="seat" id="a2" onclick="seatBooka2()">2</td><td></td>
+            <td class="seat" id="a3" onclick="seatBooka3()">3</td><td></td>
+            <td class="seat" id="a4" onclick="seatBooka4()">4</td><td></td>
+            <td class="seat" id="a5" onclick="seatBooka5()">5</td><td></td>
+            <td class="seat" id="a6" onclick="seatBooka6()" >6</td><td></td>
+            <td class="seat" id="a7" onclick="seatBooka7()">7</td><td></td>
+            <td class="seat" id="a8" onclick="seatBooka8()">8</td><td></td>
+            <td class="seat" id="a9" onclick="seatBooka9()">9</td><td></td>
+            <td class="seat" id="a10" onclick="seatBooka10()">10</td><td></td>
+            <td class="seat" id="a11" onclick="seatBooka11()">11</td><td></td>
+            <td class="seat" id="a12" onclick="seatBooka12()">12</td><td></td>
+            <td class="seat" id="a13" onclick="seatBooka13()">13</td><td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td><td></td>
+            <td></td>
+            <td></td>
+            <td class="seat" id="a14" onclick="seatBooka14()">14</td><td></td>
+            <td class="seat" id="a15" onclick="seatBooka15()">15</td><td></td>
+            <td class="seat" id="a16" onclick="seatBooka16()">16</td><td></td>
+            <td class="seat" id="a17" onclick="seatBooka17()">17</td><td></td>
+            <td class="seat" id="a18" onclick="seatBooka18()">18</td><td></td>
+            <td class="seat" id="a19" onclick="seatBooka19()">19</td><td></td>
+            <td class="seat" id="a20" onclick="seatBooka20()">20</td><td></td>
+            <td class="seat" id="a21" onclick="seatBooka21()">21</td><td></td>
+            <td class="seat" id="a22" onclick="seatBooka22()">22</td><td></td>
+            <td class="seat" id="a23" onclick="seatBooka23()">23</td><td></td>
+            <td class="seat" id="a24" onclick="seatBooka24()">24</td><td></td>
+            <td class="seat" id="a25" onclick="seatBooka25()">25</td><td></td>
+            <td class="seat" id="a26" onclick="seatBooka26()">26</td><td></td>
+        </tr><tr><td></td></tr>
+
+
+        
+    </table>
+
+
+    <div id="screen">All eyes this way please!</div>
+    
+    <button type="button" id="btkbtn" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Book Ticket
+    </button>
+  
+  
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:yellow ;">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: rgb(156, 149, 149);">Thank You😍...</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             Your Ticket is Booked Sucessfully....
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="booktickets.html"><button type="button" class="btn btn-primary">Home</button></a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="listurshow">
+        <img src="https://in.bmscdn.com/webin/common/icons/hut.svg" alt="">
+        <span>LIST YOUR SHOW</span>
+        <span>Got a show, event, activity or a great experience? Partner with us</span>
+        <button id="contact" onclick="displayContact()" >CONTACT TODAY</button>
+      </div>
+      <div id="contactform">
+        <div id="contactsubdiv">
+          <div id="listheading"><h3>List Your Show</h3></div>
+          <form action="#">
+            <label for="name">Enter Your Name</label><br>
+            <input type="text" id="name" placeholder="Full Name" required><br><br>
+            <label for="mailid">Enter Your Email</label><br>
+            <input type="email" id="mailid" placeholder="Email id" required><br><br>
+            <label for="mobile">Enter Your Number</label><br>
+            <input type="number" id="mobile" placeholder="Mobile Number" required maxlength="10" minlength="10"><br><br>
+            <label for="host">What can you Host?</label><br>
+            <input type="text" id="host" placeholder="host type" required><br><br>
+            <label for="date">Date</label><br>
+            <input type="date" id="date" required><br><br>
+            <label for="eventcity">EVENT CITY</label><br>
+            <select id="eventcity">
+              <option value="Chennai">Chennai</option>
+              <option value="Trichy">Trichy</option>
+              <option value="Coimbatore">Coimbatore</option>
+            </select><br><br>
+            <label for="Audience">Audience Range</label><br>
+            <input type="range" min="0" max="100000" step="100" id="Audience" ><br><br>
+            <label for="about">About Event</label><br>
+            <textarea  id="about" cols="30" rows="10"></textarea><br><br>
+            <button>SUBMIT</button>
+            <button onclick="closeform()">CLOSE</button>
+          </form>
+        </div>
+    </div>
+    <footer>
+        <br>
+        <div id="helphead" style="color: white;"><h4 style="margin-left:48% ;">Help</h4><hr></div>
+        <div id="help" style="margin-left: 30%;">
+            <div><a href="#" class="help">About us</a></div>
+            <div><a href="" class="help">Contact Us</a></div>
+            <div><a href="" class="help">FAQ's</a></div>
+            <div><a href="" class="help">Terms and Condition</a></div>
+            <div><a href="" class="help">Privacy</a></div>
+
+        </div><br><br>
+        <div id="footerlogo">
+          <a href="booktickets.html"><img src="../bookticketimages/logo-no-background.png" alt="footlogo"></a>
+        </div><br>
+        <div id="applogo">
+            <span><i  class="fa-brands fa-facebook-f"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-youtube"></i></span>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="../javascript/bookticketsseat.js"></script>
+    <script src="https://kit.fontawesome.com/4bf32c3ba6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

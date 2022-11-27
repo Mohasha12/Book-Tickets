@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTickets</title>
+    <link rel="stylesheet" href="../css/booktickets.css">
+    <link rel="shortcut icon" href="../bookticketimages/logo-no-background.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BookTickets</title>
+</head>
+<body id="book">
+    <header id="mainheader" class="header">
+        <nav id="mainnav">
+            <img src="../bookticketimages/logo-no-background.png" alt="logo">
+            <div class="input-group" id="searchdiv">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Search for Movies ,Events and Sports" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div id="selectcity">
+                <select name="Cities" id="cities">
+                    <option value="select cities">Select City</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Trichy">Trichy</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signindiv" id="signin">
+                Sign In
+            </button>
+            <div class="modal fade" id="signindiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="signinLabel">Sign In</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="emailid">ENTER EMAIL ID</label>
+                            <input type="email" id="emailid"><br><br>
+                            <label for="password">ENTER PASSWORD</label>
+                            <input type="password" id="password"><br><br>
+                            
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#registerdiv" id="register">
+                Register
+            </button>
+            <div class="modal fade" id="registerdiv" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:  rgba(255, 255, 0, 0.604);">
+                        <h5 class="modal-title" id="registerLabel">Register</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="name">ENTER NAME</label>
+                            <input type="text"  id="registername"><br><br>
+                            <label for="upemailid">ENTER EMAIL ID</label>
+                            <input type="email" id="upemailid"><br><br>
+                            <label for="uppassword">ENTER PASSWORD</label>
+                            <input type="password" id="uppassword"><br><br>
+                            <label for="upconfirmpassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="upconfirmpassword"><br><br>
+                            <label for="mobilenumber">ENTER MOBILE NUMBER</label>
+                            <input type="text" id="mobilenumber" maxlength="10" minlength="10"><br><br>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        <nav id="subnav">
+            <span id="subnav1">
+                <a class="nav" href="booktickets.html" target="_blank">Movies</a>
+                <a class="nav" href="booktickets.html" target="_blank">Events</a>
+                <a class="nav" href="booktickets.html" target="_blank">Sports</a>
+                <a class="nav" href="booktickets.html" target="_blank">Activies</a>
+            </span>
+            <span id="subnav2">
+                <a class="nav2" href="#" onclick="displayContact()" >List Your Shows</a>
+                <a class="nav2" href="#">Offers</a>
+                <a class="nav2" href="#">Gift Cards</a>
+                
+            </span>
+        </nav>
+    </header>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667241256491_web.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666862942745_rfghgfbc.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667478746175_indian.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1666871968166_dfghjkjhgf.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1667909415401_2werty.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+    <div class="attributes-container" >
+        <div class="offer-details-container legends-section">
+        </div>
+        <div class="legends-container">
+            <div class="showtimes-legend">
+                <div class="legend-icon"></div>
+                <div class="legend-text">Available</div>
+            </div>
+            <div class="showtimes-legend">
+                <div class="legend-icon fast"></div>
+                <div class="legend-text">Fast Filling</div>
+            </div>
+            <div class="showtimes-legend">
+                <div class="subtitle">LAN</div>
+                <div class="legend-text">Subtitles Language</div>
+            </div>
+        </div>
+    </div>
+    <div id="cinemas">
+
+        <div id="cinemalist">
+            <div  id="list1">
+                <div class="cinemalist1">
+                    <div class="cinemaname">AGS cinema OMR:Navalur</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">AGS cinema : Maduravayal</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 12:10 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:30 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:50 PM <br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">AGS cinema : T.Nagar</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY 7.1</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">AGS cinema : Villivakam</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">National Cinemas : Tambaram</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+            </div>
+            <div  id="list2">
+                <div class="cinemalist1">
+                    <div class="cinemaname">PVR cinema :ECR</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">PVR cinema : Pallavaram</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 12:10 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:30 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:50 PM <br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">PVR cinema : T.Nagar</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY 7.1</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">Luxe cinema : Chennai</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>XPOD/4K</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>XPOD/4K</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">Vidya Cinemas : Tambaram</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+            </div>
+            <div  id="list3">
+                <div class="cinemalist1">
+                    <div class="cinemaname">PVR cinema : Royapet</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">PVR cinema : Velachery</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 12:10 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:30 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:50 PM <br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">Satyam cinema : Nungabakam</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:50 AM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:10 PM<br>4K DOLBY 7.1</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:20 PM<br>4K DOLBY 7.1</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">Mayajal cinema : ECR</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>XPOD/4K</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>XPOD/4K</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+                <div class="cinemalist1">
+                    <div class="cinemaname">Vetri Cinemas : Chromepet</div>
+                    <div class="cinematime">
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 11:40 AM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 3:00 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 6:20 PM<br>4K DOLBY ATMOS</a></div>
+                        <div class="cinematimelist"><a href="bookticketsseat.html"> 9:40 PM<br>4K DOLBY ATMOS</a></div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+        </div>
+    </div>
+        <div id="pagebtn">
+            <button id="prebtn" onclick="previousPage()">Previous</button>
+            <input type="number" name="pgno" id="pageno" disabled="disable" >
+            <button id="nxtbtn" onclick="nextPage()">Next</button>
+        </div>
+    
+      
+
+
+    <div id="listurshow">
+        <img src="https://in.bmscdn.com/webin/common/icons/hut.svg" alt="">
+        <span>LIST YOUR SHOW</span>
+        <span>Got a show, event, activity or a great experience? Partner with us</span>
+        <button id="contact" onclick="displayContact()" >CONTACT TODAY</button>
+      </div>
+      <div id="contactform">
+        <div id="contactsubdiv">
+          <div id="listheading"><h3>List Your Show</h3></div>
+          <form action="#">
+            <label for="name">Enter Your Name</label><br>
+            <input type="text" id="name" placeholder="Full Name" required><br><br>
+            <label for="mailid">Enter Your Email</label><br>
+            <input type="email" id="mailid" placeholder="Email id" required><br><br>
+            <label for="mobile">Enter Your Number</label><br>
+            <input type="number" id="mobile" placeholder="Mobile Number" required maxlength="10" minlength="10"><br><br>
+            <label for="host">What can you Host?</label><br>
+            <input type="text" id="host" placeholder="host type" required><br><br>
+            <label for="date">Date</label><br>
+            <input type="date" id="date" required><br><br>
+            <label for="eventcity">EVENT CITY</label><br>
+            <select id="eventcity">
+              <option value="Chennai">Chennai</option>
+              <option value="Trichy">Trichy</option>
+              <option value="Coimbatore">Coimbatore</option>
+            </select><br><br>
+            <label for="Audience">Audience Range</label><br>
+            <input type="range" min="0" max="100000" step="100" id="Audience" ><br><br>
+            <label for="about">About Event</label><br>
+            <textarea  id="about" cols="30" rows="10"></textarea><br><br>
+            <button>SUBMIT</button>
+            <button onclick="closeform()">CLOSE</button>
+          </form>
+        </div>
+    </div>
+    <footer>
+        <br>
+        <div id="helphead" style="color: white;"><h4 style="margin-left:48% ;">Help</h4><hr></div>
+        <div id="help" style="margin-left: 30%;">
+            <div><a href="#" class="help">About us</a></div>
+            <div><a href="" class="help">Contact Us</a></div>
+            <div><a href="" class="help">FAQ's</a></div>
+            <div><a href="" class="help">Terms and Condition</a></div>
+            <div><a href="" class="help">Privacy</a></div>
+
+        </div><br><br>
+        <div id="footerlogo">
+          <a href="booktickets.html"><img src="../bookticketimages/logo-no-background.png" alt="footlogo"></a>
+        </div><br>
+        <div id="applogo">
+            <span><i  class="fa-brands fa-facebook-f"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-youtube"></i></span>
+
+        </div>
+
+    </footer>
+    <script src="../javascript/bookticketscinema.js"></script>
+    <script src="https://kit.fontawesome.com/4bf32c3ba6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
